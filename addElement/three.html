@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Element</title>
+</head>
+<body>
+    <ul id="animals"></ul>
+</body>
+</html>
+
+<script>
+    const animals_name = ["Lion", "Elephant", "Tiger", "Giraffe", "Zebra", "Kangaroo", "Panda", "Dolphin", "Eagle", "Penguin"];
+
+    const list=document.getElementById("animals")
+    
+    // const first=document.createElement("li")
+    // console.log(first);
+    // first.textContent="tiger"
+    // list.append(first)
+    animals_name.forEach((el)=>{
+        const point= document.createElement("li")
+        point.textContent=el
+        list.append(point)
+    })
+</script>
