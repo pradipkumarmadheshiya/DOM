@@ -14,5 +14,31 @@
 </head>
 <body>
     <div id="box"></div>
+    <br>
+    <button onclick="toRed()">Red</button>
+    <button onclick="toGreen()">Green</button>
+    <button onclick="toBlue()">Blue</button>
+    <button onclick="toReset()">Reset</button>
 </body>
 </html>
+
+<script>
+    const boxDiv=document.getElementById("box");
+
+    const redbtn=document.querySelector("div > button:nth-child(1)");
+    const greenbtn=document.querySelector("#box>button>:nth-child(2)");
+    const bluebtn=document.querySelector("#box>button:nth-child(3)");
+
+    function toRed(){
+        boxDiv.style.backgroundColor="red";
+    }
+    function toGreen(){
+        boxDiv.style.backgroundColor="green";
+    }
+    function toBlue(){
+        boxDiv.style.backgroundColor="blue"
+    }
+    function toReset(){
+        boxDiv.style.backgroundColor=null
+    }
+</script>
