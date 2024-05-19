@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Card</title>
+    <style>
+        #box{
+            border: 1px solid black;
+            padding: 20px;
+            width: fit-content;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Sign Up</h2>
+        <label>
+            Email:
+            <input type="text">
+        </label>
+        <br>
+        <br>
+        <label for="">
+            Password:
+            <input type="text">
+        </label>
+        <br>
+        <br>
+        <label for="">
+            Re-enter password:
+            <input type="text">
+        </label>
+        <br>
+        <br>
+        <button>Submit</button>
+    </div>
+</body>
+</html>
+
+<script>
+    const inpArr=document.getElementsByTagName("input")
+    const btn=document.getElementsByTagName("button")[0]
+    
+    const [email,password,rePassword]=inpArr
+    
+    btn.addEventListener("click", () => {
+        if (password.value!==rePassword.value){
+            alert("Password mis-match")
+        }
+    })
+</script>
