@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cards</title>
+    <style>
+        table{
+            width: 100%;
+            text-align: left;
+        }
+        th{
+            border: 1px solid black;
+            background-color: rgb(132, 132, 132);
+        }
+    </style>
+</head>
+<body>
+    <h1>User List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>USERNAME</th>
+                <th>EMAIL</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    let user = [
+        {
+            id: 1,
+            name: "Leanne Graham",
+            username: "Bret",
+            email: "Sincere@april.biz",
+        },
+        {
+            id: 2,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv",
+        },
+        {
+            id: 3,
+            name: "Clementine Bauch",
+            username: "Samantha",
+            email: "Nathan@yesenia.net",
+        },
+        {
+            id: 4,
+            name: "Patricia Lebsack",
+            username: "Karianne",
+            email: "Julianne.OConner@kory.org",
+        },
+        {
+            id: 5,
+            name: "Chelsey Dietrich",
+            username: "Kamren",
+            email: "Lucio_Hettinger@annie.ca",
+        },
+        {
+            id: 6,
+            name: "Mrs. Dennis Schulist",
+            username: "Leopoldo_Corkery",
+            email: "Karley_Dach@jasper.info",
+        },
+        {
+            id: 7,
+            name: "Kurtis Weissnat",
+            username: "Elwyn.Skiles",
+            email: "Telly.Hoeger@billy.biz",
+        },
+        {
+            id: 8,
+            name: "Nicholas Runolfsdottir V",
+            username: "Maxime_Nienow",
+            email: "Sherwood@rosamond.me",
+        },
+        {
+            id: 9,
+            name: "Glenna Reichert",
+            username: "Delphine",
+            email: "Chaim_McDermott@dana.io",
+        },
+        {
+            id: 10,
+            name: "Clementina DuBuque",
+            username: "Moriah.Stanton",
+            email: "Rey.Padberg@karina.biz",
+        },
+        ];
+        
+    document.addEventListener("DOMContentLoaded",function(){
+        const tableBody=document.querySelector('tbody')
+
+        user.forEach((el)=>{
+            const row=document.createElement("tr")
+
+            row.innerHTML=
+            `<td>${el.id}</td>
+            <td>${el.name}</td>
+            <td>${el.username}</td>
+            <td>${el.email}</td>
+            <td><button class="delete">Delete</button></td>`;
+
+            tableBody.append(row)
+
+            const del=row.querySelector(".delete")
+            
+            del.addEventListener("click", function(){
+                row.remove()
+            })
+        })
+        
+
+    })
+</script>
