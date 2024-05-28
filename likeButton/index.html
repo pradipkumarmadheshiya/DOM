@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .buttons{
+            display: flex;
+            gap: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img style="width: 100%;" src="https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Fbanner%2Fferrari%2Fsf90-stradale%2Fbanner.jpg%3Fv%3D3&w=1920&q=75" alt="">
+    <br>
+    <br>
+    <div class="buttons">
+        <div>
+            <button class="likeBtn">Like</button>
+            <p class="likeValue"></p>
+        </div>
+        <div>
+            <button class="dislikeBtn">Dislike</button>
+            <p class="dislikeValue"></p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const likeBtn=document.querySelector(".likeBtn")
+    const dislikeBtn=document.querySelector(".dislikeBtn")
+    const likePara=document.querySelector(".likeValue")
+    const dislikePara=document.querySelector(".dislikeValue")
+
+    let localLikeValue=localStorage.getItem("likeValue")
+    let localDislikeValue=localStorage.getItem("dislikeValue")
+
+    let likeValue=localLikeValue || 0
+    let dislikeValue=localDislikeValue || 0
+
+    likePara.textContent=likeValue
+    dislikePara.textContent=dislikeValue
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+
+        likeBtn.addEventListener("click", ()=>{
+            likeValue++
+            likePara.textContent=likeValue
+            localStorage.setItem("likeValue",likeValue)
+        })
+
+        dislikeBtn.addEventListener("click", ()=>{
+            dislikeValue++
+            dislikePara.textContent=dislikeValue
+            localStorage.setItem("dislikeValue",dislikeValue)
+        })
+    })
+</script>
