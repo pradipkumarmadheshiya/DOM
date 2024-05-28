@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <style>
+        #navbar{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            padding: 20px;
+            box-shadow: 0 1px 15px grey;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div>Home</div>
+        <div>About</div>
+        <div>Skills</div>
+        <div>Projects</div>
+        <div>Contact</div>
+        <button style="cursor: pointer;" id="toggle">Toggle</button>
+    </div>
+</body>
+</html>
+
+<script>
+    const navbar=document.getElementById("navbar")
+    const toggle=document.getElementById("toggle")
+
+    let toggleValue=localStorage.getItem("toggleValue") || "light"
+    localStorage.setItem("toggleValue",toggleValue)
+    navbar.style.backgroundColor=toggleValue
+
+    
+    toggle.addEventListener("click",()=>{
+
+        let toggleValue=localStorage.getItem("toggleValue")
+
+        if (toggleValue==="light"){
+            navbar.style.backgroundColor="grey"
+            localStorage.setItem("toggleValue","grey")
+        }
+        else if (toggleValue==="grey"){
+            navbar.style.backgroundColor="white"
+            localStorage.setItem("toggleValue","light")
+        }
+    })
+</script>
