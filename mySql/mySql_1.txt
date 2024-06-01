@@ -1,0 +1,35 @@
+create database django;
+use django;
+create table users(
+first_name varchar(50),
+last_name varchar(50),
+fone_number int,
+email varchar(50),
+street_address varchar(100),
+apartment varchar(100),
+city varchar(100),
+state varchar(50),
+zip_code int
+);
+show tables;
+select * from users;
+alter table users modify first_name varchar(50) not null;
+select * from users;
+describe users;
+alter table users modify last_name varchar(50) not null;
+alter table users modify fone_number int not null unique;
+alter table users modify email varchar(50) not null unique;
+alter table users modify street_address varchar(100) not null;
+alter table users modify city varchar(50) not null;
+alter table users modify state varchar(50) not null;
+alter table users modify zip_code int not null;
+describe users;
+alter table users modify fone_number varchar(50);
+insert into users (first_name, last_name, fone_number, email, street_address, apartment, city, state, zip_code)
+value ("pradip", "Madheshiya", 9721824212, "prdpmadheshiya@gmail.com", "Bhawani Dham Phase 2", "Santi Sarowar", "Kushinagar", "Uttar Pradesh", 274303);
+select * from users;
+update users set street_address="Bhawani Dham Phase 1", apartment="Sharda Enclave" where fone_number= "9721824212";
+select * from users;
+select first_name, street_address, fone_number from users where city= "Kushinagar";
+drop table users;
+show tables;
