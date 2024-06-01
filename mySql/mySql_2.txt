@@ -1,0 +1,22 @@
+create database blogdatabase;
+show databases;
+use blogdatabase;
+select database();
+create table users(
+user_id int,
+user_name int,
+email varchar(50),
+user_password varchar(50)
+);
+show tables;
+select * from users;
+alter table users modify user_name varchar(50);
+alter table users add isStudent boolean;
+insert into users (user_id, user_name, email, user_password, isStudent) values (1, "pradip", "abc@gmail.com", 12356, true),
+(2, "kumar", "xyz@gmail.com", 11223, false), (3, "Madheshiya", "123@gmail.com", 35213, true), (4, "rohan", "2344@gmail.com", 25321, false),
+(5, "deepak", "abcd", 24223, true);
+select * from users;
+TRUNCATE TABLE Users;
+select * from users;
+drop table users;
+select * from users;
