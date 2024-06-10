@@ -1,0 +1,51 @@
+1. How can you find employees with an id greater than or equal to 10?
+
+db.users.find({id:{$gte:10}});
+
+2. Find all employees who work in either the "Engineering" or "Marketing" departments.
+
+db.users.find({department:{$in:["Engineering", "Marketing"]}});
+
+3. How do you find employees whose gender is in ["Female", "Agender", "Non-binary"]?
+
+db.users.find({gender:{$in:["Female", "Agender", "Non-binary"]}});
+
+4. Write a query to find all employees whose department is not in ["Services", "Human Resources"].
+
+db.users.find({department:{$nin:["Services", "Human Resources"]}});
+
+5. How can you find employees whose gender is not in ["Male", "Female"]?
+
+db.users.find({gender:{$nin:["Male", "Female"]}});
+
+6. Find employees who have a salary greater than 40000 and work in the "Marketing" department.
+
+db.Employees.find({salary:{$gt:40000}, department:"Marketing"});
+
+7. How do you find employees whose id is less than 10 and gender is "Male"?
+
+db.Employees.find({id:{$lt:10}, gender:"Male"});
+
+8. Write a query to find employees who either have a salary less than 30000 or work in the "Training" department.
+
+db.Employees.find({$or:[{salary:{$lt:30000}}, {department:"Training"}]});
+
+9. How can you find employees whose id is either 1, 5, or 10?
+
+db.Employees.find({$or:[{id:1}, {id:5}, {id:10}]});
+
+10. Find all employees whose salary is not less than 60000.
+
+db.Employees.find({salary:{$gte:60000}});
+
+11. How do you find employees whose id is not greater than 15?
+
+db.Employees.find({id:{$lte:15}});
+
+12. Write a query to find employees who have the email field.
+
+db.Employees.find({email:{$exists:true}});
+
+13. How can you find documents where the projects field does not exist (assuming some employees might have a 'projects' field)?
+
+db.Employees.find({field:{$exists:false}});
