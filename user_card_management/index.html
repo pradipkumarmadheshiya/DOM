@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #container h1{
+            text-align: center;
+        }
+        nav{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        nav a{
+            font-size: 19px;
+            text-decoration: none;
+            color: black;
+        }
+        nav a:hover{
+            text-decoration: underline;
+        }
+        h2{
+            text-align: center;
+        }
+        #users_box{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .box{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>User Card Management</h1>
+        <nav>
+            <a href="index.html">Users Cards</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+        <h2>Users Cards</h2>
+        <div id="users_box">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>
