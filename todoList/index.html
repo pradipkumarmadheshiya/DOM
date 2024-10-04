@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        #todos_box{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        h2{
+            margin-top: 40px;
+            text-align: center;
+        }
+        #inp_priority_box{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #inp_box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #add_todo{
+            margin-top: 70px;
+            width: fit-content;
+        }
+        table th,td{
+            border: 1px solid black;
+            padding: 2px 8px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Todos List</h2>
+        <div id="todos_box">
+            <div id="inp_box">
+                <div id="inp_priority_box">
+                    <input type="text" id="inp_todo" placeholder="Enter Todo Name">
+                    <select id="priority">
+                        <option value="Low">Low</option>
+                        <option value="Mediam">Mediam</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <input type="submit" id="add_todo" value="Add Todo">
+            </div>
+            <div id="list_box">
+                <table id="todoTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="todoTbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>
