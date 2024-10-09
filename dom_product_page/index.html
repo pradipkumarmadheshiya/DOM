@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            padding: 20px;
+        }
+        h2{
+            text-align: center;
+        }
+        #filter_sort_box{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        #products_box{
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        #products_box div{
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+        #products_box div img{
+            width: 100%;
+        }
+        @media (max-width:850px){
+            #products_box{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            #products_box div{
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Product Page</h2>
+        <!-- Filtering and sorting -->
+        <div id="filter_sort_box">
+            <label>
+                Filter by Category: <select name="" id="filterBy">
+                    <option value="">Default</option>
+                    <option value="men's clothing">Men</option>
+                    <option value="jewelery">Jewellery</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="women's clothing">Women</option>
+                </select>
+            </label>
+            <label>
+                Sort By: <select name="" id="sortBy">
+                    <option value="">Select</option>
+                    <option value="ascending">Asc Price</option>
+                    <option value="descending">Des Price</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </label>
+        </div>
+        <!-- Display products -->
+         <div id="products_box">
+
+         </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
